@@ -1,0 +1,33 @@
+
+<div #container style="width: 100%; height: 100%;">
+    <!-- <app-code-background ></app-code-background> -->
+    <!-- <app-sprite-animation></app-sprite-animation> -->
+    <div class="textured-div" [class.active]="isActive" style="position: absolute;"></div>
+    <canvas #characterCanvas style="position: absolute; z-index: 5; width: 100%; height: 100%;"></canvas>
+    <div class="serif-text" style="position: absolute;">
+        <p>
+            Hi, my
+        </p>
+        <div class="secondLine">
+            <p style="display: inline">
+                name is 
+            </p>
+            <p class="name "style="display: inline">
+                Florian Meinel
+            </p>
+        </div>
+        <div class="thirdLine">
+            <p style="display: inline">
+                I'm a creative 
+            </p>
+            <p class="rank" style="display: inline">
+                Software Developer
+            </p>
+            <p style="display: inline">
+                from
+            </p>
+            <p class="country">Germany</p>
+        </div>
+        
+    </div>
+</div>

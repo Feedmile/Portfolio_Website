@@ -1,0 +1,18 @@
+<div class="navbar">
+  <div class="logo"></div>
+  <nav>
+      <ul>
+          <li class="slider-wrapper" [class.active]="isActive" (click)="themeService.toggleTheme()">
+            <div *ngIf="isActive" class="icon moon-icon">
+              <!-- Moon PNG -->
+              <img src="../assets/white/icon/moon.png" class="moon">
+          </div>
+          <div class="slider-button" [class.active]="isActive"></div>
+          <div *ngIf="!isActive" class="icon sun-icon">
+              <!-- Sun PNG -->
+              <img src="../assets/white/icon/sun.png"  class="sun">
+          </div>
+        </li>
+      </ul>
+  </nav>
+</div>

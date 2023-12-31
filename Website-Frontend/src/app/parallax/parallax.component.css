@@ -1,0 +1,44 @@
+.textured-div {
+    width: 30%; /* Adjust as per your requirement */
+    height: 20%; /* Adjust as per your requirement */
+    top: 35%;
+    right: 20%;
+    background: repeating-linear-gradient(
+        45deg,
+        #d1d0d0,
+        #d1d0d0 1px,
+        transparent 3px,
+        transparent 5px
+    );
+}
+.textured-div.active{
+    background: repeating-linear-gradient(
+        45deg,
+        #8f8f8f,
+        #8f8f8f 1px,
+        transparent 3px,
+        transparent 5px
+    );
+}
+.serif-text {
+    top:27%;
+    left: 30%;
+    font-weight: 500;
+    font-size: 2.8vw;
+    font-family: 'Inter', sans-serif;
+}
+.secondLine{
+    margin-top: -10%;
+}
+.name{
+    font-weight: 700;
+    font-size: 3.2vw;
+}
+.thirdLine{
+    font-size: 1.5vw;
+}
+.rank{
+    font-size: 1.5vw;
+
+    font-weight: 700;
+}
