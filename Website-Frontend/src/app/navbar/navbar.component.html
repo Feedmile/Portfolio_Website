@@ -1,8 +1,8 @@
-<div class="navbar">
+<div class="navbar" style="pointer-events:none">
   <div class="logo"></div>
   <nav>
       <ul>
-          <li class="slider-wrapper" [class.active]="isActive" (click)="themeService.toggleTheme()">
+          <li class="slider-wrapper" [class.active]="isActive" (click)="themeService.toggleTheme()" style="pointer-events:all">
             <div *ngIf="isActive" class="icon moon-icon">
               <!-- Moon PNG -->
               <img src="../assets/white/icon/moon.png" class="moon">

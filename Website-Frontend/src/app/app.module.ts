@@ -6,12 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ParallaxComponent } from './parallax/parallax.component';
 
 import { NavbarComponent } from './navbar/navbar.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
-  declarations: [		
+  declarations: [			
     AppComponent,
     ParallaxComponent,
-    NavbarComponent
+    NavbarComponent,
+      AboutComponent
    ],
   imports: [
     BrowserModule,

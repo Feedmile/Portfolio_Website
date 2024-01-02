@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { ThemeService } from '../navbar/Theme.service';
+import { ThemeService } from './Theme.service';
 
 describe('Service: Theme', () => {
   beforeEach(() => {

@@ -9,10 +9,12 @@ import { Subscription } from 'rxjs';
 })
 export class ParallaxComponent implements AfterViewInit {
   @ViewChild('characterCanvas', {static: true})  myCanvas!: ElementRef;
+  @ViewChild('container') myContainer!: ElementRef;
   private characterImage : any;
   private leftEyeImage: any;
   private rightEyeImage: any;
   private spriteSheet: any;
+  private container: any;
   private canvas!: HTMLCanvasElement;
   private ctx!: CanvasRenderingContext2D;
   private leftEyePos = { x: 0, y: 0 };
@@ -34,6 +36,8 @@ export class ParallaxComponent implements AfterViewInit {
     this.sprites = [];
     if (isPlatformBrowser(this.platformId)){
         this.canvas = this.myCanvas.nativeElement;
+        this.container = this.myContainer;
+        console.log(this.container, this.myContainer)
         this.ctx = this.canvas.getContext('2d')!;
         this.characterImage = new Image();
         this.leftEyeImage = new Image();
@@ -65,6 +69,24 @@ export class ParallaxComponent implements AfterViewInit {
          
         }
 
+    }
+  }
+  onMouseMove(event: MouseEvent): void {
+    // const containerRect = this.container.nativeElement.getBoundingClientRect();
+    // const mouseX = event.clientX;
+    // const containerCenter = containerRect.left + (containerRect.width / 2);
+    // const distanceFromCenter = mouseX - containerCenter;
+    // const normalizedDistance = distanceFromCenter / containerRect.width;
+    // const maxOffset = 20; 
+    // const offset = normalizedDistance * maxOffset;
+    // this.applyOffsetToElement('.serif-text', -offset);
+    // this.applyOffsetToElement('.textured-div', offset);
+  }
+  
+  private applyOffsetToElement(selector: string, offset: number): void {
+    const element = this.container.nativeElement.querySelector(selector);
+    if (element) {
+      element.style.transform = `translateX(${offset}px)`;
     }
   }
   ngOnDestroy() {
