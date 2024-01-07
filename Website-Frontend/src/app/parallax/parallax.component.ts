@@ -37,7 +37,6 @@ export class ParallaxComponent implements AfterViewInit {
     if (isPlatformBrowser(this.platformId)){
         this.canvas = this.myCanvas.nativeElement;
         this.container = this.myContainer;
-        console.log(this.container, this.myContainer)
         this.ctx = this.canvas.getContext('2d')!;
         this.characterImage = new Image();
         this.leftEyeImage = new Image();
@@ -159,7 +158,6 @@ export class ParallaxComponent implements AfterViewInit {
   this.ctx.drawImage(this.leftEyeImage, this.leftEyePos.x, this.leftEyePos.y, eyeImageWidth, eyeImageHeight);
   this.ctx.drawImage(this.rightEyeImage, this.rightEyePos.x, this.rightEyePos.y, eyeImageWidth, eyeImageHeight);
   this.setupMouseMovement();
-  console.log(characterPosX,characterPosY)
   if (this.sprites.length === 0) {
     this.createSprite(characterPosX,characterPosY,characterImageWidth,characterImageHeight)
   }
@@ -167,7 +165,6 @@ export class ParallaxComponent implements AfterViewInit {
 
   }
   private createSprite(characterPosX:number,characterPosY:number,characterImageWidth:number,characterImageHeight:number) {
-    console.log("sprite")
     let x = (characterPosX + characterImageWidth/2) / 1.05; // Central point X
     let y =  characterPosY + characterImageHeight/2; // Central point Y
     let radius = Math.min(this.canvas.width, this.canvas.height) * 0.3; // Radius of the initial circle

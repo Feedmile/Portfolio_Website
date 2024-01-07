@@ -1,0 +1,37 @@
+.button-container {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    width: 10%;
+    transform: translateX(-50%);
+    z-index: 1000; /* Ensure it's above other elements */
+    text-align: center;
+}
+.button-container-past {
+    position: fixed;
+    width: 10%;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+    z-index: 1000; /* Ensure it's above other elements */
+}
+.image-button {
+    border: none; /* Removes the default border */
+    background: none; /* Removes the default background */
+    padding: 0; /* Removes the default padding */
+    cursor: pointer; /* Changes the cursor to indicate it's clickable */
+    filter: invert(20%);
+
+}
+
+.image-button img {
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for size and filter */
+    width: 50px; /* Set the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+.image-button:hover{
+    transform: scale(1.1);
+}
+.image-button.active{
+    filter: invert(100%);
+}

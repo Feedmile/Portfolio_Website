@@ -1,0 +1,10 @@
+<div class="button-container" (click)="scrollToNextPoint()">
+  <button class="image-button" [class.active]="isActive"> 
+    <img src="../assets/white/icon/arrow.png" style=" transform: scaleY(-1);">
+  </button>
+</div>
+<div *ngIf="!isTop" class="button-container-past" (click)="scrollToPastPoint()">
+  <button class="image-button" [class.active]="isActive">
+    <img src="../assets/white/icon/arrow.png" >
+  </button>
+</div>

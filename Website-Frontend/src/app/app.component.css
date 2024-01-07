@@ -1,0 +1,11 @@
+.parallax-container, .about-container, .nav, .another{
+    height: 100dvh;
+    width: 98dvw;
+}
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+  }

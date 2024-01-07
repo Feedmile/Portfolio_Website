@@ -1,13 +1,14 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
 import { ThemeService } from '../navbar/Theme.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent implements AfterViewInit {
   @ViewChild('spriteCanvas', {static: true})  myCanvas!: ElementRef;
 
   private canvas!: HTMLCanvasElement;
@@ -18,13 +19,15 @@ export class AboutComponent implements OnInit {
   private spriteWidth: number = 269;
   private spriteHeight: number = 325;
   private spriteLoaded:boolean = false;
-  private isActive:boolean = false;
+  public isActive:boolean = false;
   private lastFrameTime: number = 0;
   private frameDuration: number = 1000 / 10;
+  private themeSubscription!: Subscription;
+  private animationFrameId: number | null = null;
   constructor(@Inject(PLATFORM_ID) private platformId: Object,public themeService: ThemeService) { 
   }
 
-  ngOnInit() {
+  ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)){
       this.canvas = this.myCanvas.nativeElement;
       this.ctx = this.canvas.getContext('2d')!;
@@ -33,13 +36,20 @@ export class AboutComponent implements OnInit {
         this.spriteImage.onload = () => {
           this.spriteLoaded = true;
           this.checkAllImagesLoaded();
+          this.animate();
         };
         this.spriteImage.src = '../assets/white/spritesheets/charSheet.png'; // Path to your spritesheet
 
       }
-      this.spriteImage.onload = () => {
-      this.animate();
-      }
+
+    }
+  }
+  ngOnDestroy() {
+    if (this.themeSubscription) {
+      this.themeSubscription.unsubscribe();
+    }
+    if (this.animationFrameId) {
+      cancelAnimationFrame(this.animationFrameId);
     }
   }
   private checkAllImagesLoaded(): void {
@@ -59,7 +69,7 @@ export class AboutComponent implements OnInit {
     this.ctx.filter = filter;
   }
   public updateCanvasImagesForDarkMode(): void {
-    this.applyFilterToImage(this.spriteImage, 'invert(1)');
+    this.applyFilterToImage(this.spriteImage, 'invert(.8)');
     this.animate();
   }
   public updateCanvasImagesForLightMode(): void {
@@ -67,6 +77,9 @@ export class AboutComponent implements OnInit {
     this.animate();
   }
   animate(timestamp: number = 0) {
+    if (this.animationFrameId) {
+      cancelAnimationFrame(this.animationFrameId); 
+    }
     const timeSinceLastFrame = timestamp - this.lastFrameTime;
   
     if (timeSinceLastFrame >= this.frameDuration) {
@@ -76,7 +89,7 @@ export class AboutComponent implements OnInit {
         this.frameIndex * this.spriteWidth, 0,
         this.spriteWidth, this.spriteHeight,
         0, 0,
-        this.spriteWidth/2, this.spriteHeight/2
+        this.spriteWidth/4, this.spriteHeight/4
       );
   
       this.frameIndex = (this.frameIndex + 1) % this.totalFrames;

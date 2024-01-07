@@ -1,3 +1,20 @@
 <div style="width:100%; height: 100%;">
-  <canvas #spriteCanvas width="269" height="325"></canvas>
+  <div style="width:100%; height: 100%; position: absolute; z-index: 5;">
+    <div class="text-container" style="z-index: 2;">
+      <p class="title-about" [class.active]="isActive">About</p>
+      <p class="about-text">Over the past few years, I have discovered my passion for <span>programming</span>, continually pushing myself to integrate my skills and create outstanding projects.</p>
+      <p class="about-text">My interest in programming and gaming quickly drew my attention to <span>game development</span>. I am eager to enhance my skills in this area, aspiring to create memorable game content in the future.</p>
+      <p class="about-text">Gifted in <span>art</span> and  <span>creativity</span>, I possess the ability to solve problems from different perspectives, often unseen by others. This skill has proved invaluable in numerous team projects I have been part of.</p>
+      <p class="about-text">On my educational journey, I have built a strong foundation in languages like <span>TypeScript</span>, <span>C#/.NET</span>, <span>HTML/CSS</span> and <span>SQL/MySQL</span>. Additionally, I have experience with various frameworks and libraries including <span>Angular</span>, <span>React</span>, <span>MAUI</span>, <span>RxJS</span> and <span>LINQ</span>, among others.</p>
+      <p class="about-text">I am also familiar with languages such as <span>JAVA</span>, <span>C++</span>, <span>C</span>, <span>JavaScript</span>, <span>Python</span> and have the capability to quickly adapt to new ones.</p>
+      <p class="about-text">Currently, I am privileged to work at a major international company. Here, I have contributed to developing <span>fullstack internal web applications</span> with various teams and now manage and develop <span>backend logic</span> that is crucial in ensuring the quality of a large volume of data sent to a business <span>API</span>.</p>
+    </div>
+    <div class="textured-div" [class.active]="isActive" style="position: absolute;  z-index: 1;"></div>  
+    <!-- <div class="textured-div" [class.active]="isActive" style="position: absolute;  "></div> -->
+    <div class="button-container">
+      <canvas #spriteCanvas class="spriteCanvas" width="100" height="100"></canvas>
+      <button class="rounded-button" [class.active]="isActive">Download CV</button>
+    </div>
+  </div>
+ 
 </div>

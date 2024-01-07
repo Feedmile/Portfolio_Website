@@ -10,6 +10,7 @@
         transparent 3px,
         transparent 5px
     );
+    
 }
 .textured-div.active{
     background: repeating-linear-gradient(

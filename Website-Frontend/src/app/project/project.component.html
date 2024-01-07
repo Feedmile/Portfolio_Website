@@ -1,0 +1,23 @@
+<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+  <ng-template ngFor let-slide [ngForOf]="slides" let-i="index">
+    <div ngxSlickItem class="slide">
+      <div class="card" [class.active]="isActive">
+        <div class="card-header">
+          {{ slide.title }}
+        </div>
+        <div class="card-body">
+          <div class="card-content">
+            <br>
+          </div>
+          <p class="card-text">{{ slide.text }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</ngx-slick-carousel>
+<div style="position:absolute; width:100%; height:100%; top:225%; pointer-events: none">
+  <div class="textured-div" [class.active]="isActive" style="position: absolute;  z-index: -1;"></div>  
+  <p class="projects" style="position: absolute; top:15%; left:75%">Projects</p>
+  <canvas #spriteCanvas class="spriteCanvas" width="1000" height="1000" ></canvas>
+</div>

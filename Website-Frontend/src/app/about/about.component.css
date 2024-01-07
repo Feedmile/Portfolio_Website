@@ -1,0 +1,87 @@
+
+.text-container{
+    position: absolute;
+    width: 60%;
+    height: 80%;
+    top: 10%;
+    left: 5%;
+}
+.about-text span{
+    font-size: medium;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+}
+.about-text{
+    font-size: medium;
+    font-weight: 300;
+    font-family: 'Inter', sans-serif;
+}
+.title-about {
+    font-size: xx-large;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+}
+
+.button-container {
+    text-align: center; /* Center-aligns the inline elements */
+}
+
+.spriteCanvas,
+.rounded-button {
+    display: inline-block; /* Makes elements line up horizontally */
+    vertical-align: middle; /* Aligns elements vertically in the middle */
+}
+.button-container{
+    position: absolute;
+    right: 2vw;
+    top: 50%;
+    height: 50%;
+}
+.rounded-button {
+    background-color: transparent; /* Green background */
+    color: #424242; /* White text */
+    padding: 15px 32px; /* Top and bottom padding, Left and right padding */
+    text-align: center; /* Center the text */
+    border: solid 2px #424242;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px; /* Text size */
+    margin: 4px 2px; /* Margin */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 25px; /* Rounded borders */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+.rounded-button.active {
+    color: #ffffff; /* White text */
+    border: solid 2px #ffffff;
+}
+.rounded-button:hover {
+    background-color: #42424236; /* Darker shade of green on hover */
+}
+.rounded-button:hover.active {
+    background-color: #ffffff36; /* Darker shade of green on hover */
+}
+
+.textured-div {
+    width: 80%; /* Adjust as per your requirement */
+    height: 60%; /* Adjust as per your requirement */
+    top: 10%;
+    right: 0%;
+    background: repeating-linear-gradient(
+        45deg,
+        #d1d0d0,
+        #d1d0d0 1px,
+        transparent 3px,
+        transparent 5px
+    );
+    clip-path: polygon(50% 100%, 0% 0%, 80% 100%);
+
+}
+.textured-div.active{
+    background: repeating-linear-gradient(
+        45deg,
+        #8f8f8f,
+        #8f8f8f 1px,
+        transparent 3px,
+        transparent 5px
+    );
+}
