@@ -14,6 +14,8 @@
     top: 20px;
     transform: translateX(-50%);
     z-index: 1000; /* Ensure it's above other elements */
+    text-align: center;
+
 }
 .image-button {
     border: none; /* Removes the default border */

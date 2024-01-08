@@ -16,8 +16,8 @@
 }
 .carousel {
   width: 70%; /* Adjust as needed */
-  height: 70%; /* Adjust as needed */
-  margin-top: 40%;
+  height: 75%; /* Adjust as needed */
+  margin-top: 26%;
   margin-left: 28%;
 }
 .slide .card {
@@ -57,7 +57,7 @@
 }
 :host ::ng-deep.slick-current {
 height: 500px;
-transition: 1s;
+transition: .5s;
 }
 .slide .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
