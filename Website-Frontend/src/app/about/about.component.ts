@@ -69,7 +69,7 @@ export class AboutComponent implements AfterViewInit {
     this.ctx.filter = filter;
   }
   public updateCanvasImagesForDarkMode(): void {
-    this.applyFilterToImage(this.spriteImage, 'invert(.8)');
+    this.applyFilterToImage(this.spriteImage, 'invert(1)');
     this.animate();
   }
   public updateCanvasImagesForLightMode(): void {

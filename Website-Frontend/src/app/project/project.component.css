@@ -15,8 +15,8 @@
   top:10% !important
 }
 .carousel {
-  width: 70%; /* Adjust as needed */
-  height: 75%; /* Adjust as needed */
+  width: 70%; 
+  height: 75%; 
   margin-top: 26%;
   margin-left: 28%;
 }
@@ -26,12 +26,12 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   height: 80%;
-  width: 90%; /* Adjust as needed */
-  margin: auto; /* Center the card in the slide */
+  width: 90%;
+  margin: auto;
 
 }
-.active{
-  background-color: rgb(165, 165, 165);
+.card.active{
+  background-color: rgb(165, 165, 165) !important;
 
 }
 .card-header{
@@ -63,8 +63,8 @@ transition: .5s;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
 }
 .textured-div {
-  width: 80%; /* Adjust as per your requirement */
-  height: 60%; /* Adjust as per your requirement */
+  width: 80%;
+  height: 60%; 
   top: 15%;
   right: 10%;
   background: repeating-linear-gradient(

@@ -9,7 +9,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000; /* Ensures the navbar stays on top */
+    z-index: 1000;
 }
 
 .navbar .logo {

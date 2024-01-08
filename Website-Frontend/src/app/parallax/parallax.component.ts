@@ -165,14 +165,13 @@ export class ParallaxComponent implements AfterViewInit {
 
   }
   private createSprite(characterPosX:number,characterPosY:number,characterImageWidth:number,characterImageHeight:number) {
-    let x = (characterPosX + characterImageWidth/2) / 1.05; // Central point X
-    let y =  characterPosY + characterImageHeight/2; // Central point Y
-    let radius = Math.min(this.canvas.width, this.canvas.height) * 0.3; // Radius of the initial circle
+    let x = (characterPosX + characterImageWidth/2) / 1.05;
+    let y =  characterPosY + characterImageHeight/2;
+    let radius = Math.min(this.canvas.width, this.canvas.height) * 0.3;
       for(let i = 0; i < 10; i++){
         let angle = (Math.PI * 2 / 10) * i;
         let spriteX = x + Math.cos(angle) * radius;
         let spriteY = y + Math.sin(angle) * radius;
-        // Calculate the initial position for each sprite
         
         const sprite = new Sprite(spriteX,spriteY,i,radius,x,y);
         this.sprites.push(sprite);
@@ -182,7 +181,7 @@ export class ParallaxComponent implements AfterViewInit {
     }
   private updateCanvas(rightEyePosX:number,rightEyePosY:number,leftEyePosX:number,leftEyePosY:number,eyeImageWidth:number,eyeImageHeight:number,characterPosX:number,characterPosY:number,characterImageWidth:number,characterImageHeight:number) {
     if (this.animationFrameId) {
-      cancelAnimationFrame(this.animationFrameId); // Cancel the previous animation frame
+      cancelAnimationFrame(this.animationFrameId);
     }
     const maxOffset = 3; 
     let RoffsetX = (this.mouseX - rightEyePosX) / (this.canvas.width / 2) * maxOffset;

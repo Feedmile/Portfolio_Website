@@ -51,7 +51,7 @@ export class ProjectComponent implements AfterViewInit {
           this.checkAllImagesLoaded();
           this.animate();
         };
-        this.spriteImage.src = '../assets/white/spritesheets/deskSheet.png'; // Path to your spritesheet
+        this.spriteImage.src = '../assets/white/spritesheets/deskSheet.png';
 
       }
   } 
@@ -81,7 +81,7 @@ private applyFilterToImage(image: HTMLImageElement, filter: string): void {
   this.ctx.filter = filter;
 }
 public updateCanvasImagesForDarkMode(): void {
-  this.applyFilterToImage(this.spriteImage, 'invert(.8)');
+  this.applyFilterToImage(this.spriteImage, 'invert(1)');
   this.animate();
 }
 public updateCanvasImagesForLightMode(): void {

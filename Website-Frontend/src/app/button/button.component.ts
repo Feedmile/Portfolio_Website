@@ -9,7 +9,7 @@ import { ThemeService } from '../navbar/Theme.service';
 export class ButtonComponent implements OnInit {
 
   constructor(public themeService: ThemeService) { }
-  private scrollPoints = [0,0.7, 1.5, 2.1]; // Example: 1x, 2x, 3x, 4x window height
+  private scrollPoints = [0,0.7, 1.5, 2.1];
   private currentIndex = 0;
   public isActive:boolean = false;
   ngOnInit() {
@@ -21,7 +21,7 @@ export class ButtonComponent implements OnInit {
     return this.currentIndex === 0;
   }
   scrollToNextPoint(): void {
-    // Calculate the actual scrollY position based on window height
+    
     this.currentIndex = (this.currentIndex + 1) % this.scrollPoints.length;
 
     const idealWidth = 1920;
@@ -32,10 +32,8 @@ export class ButtonComponent implements OnInit {
         behavior: 'smooth'
     });
 
-    // Move to the next index or loop back to the start
 }
 scrollToPastPoint(): void {
-  // Calculate the actual scrollY position based on window height
   this.currentIndex = (this.currentIndex - 1) % this.scrollPoints.length;
   const idealWidth = 1920;
   const idealHeight = 1080;
@@ -44,7 +42,5 @@ scrollToPastPoint(): void {
       top: targetScrollY,
       behavior: 'smooth'
   });
-
-  // Move to the next index or loop back to the start
 }
 }
